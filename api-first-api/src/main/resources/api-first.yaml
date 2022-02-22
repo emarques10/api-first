@@ -6,17 +6,18 @@ info:
   description: The library service
 
 tags:
-  - name: "Library"
+  - name: "Books"
+  - name: "Users"
 
 
 paths:
 
-  /library/books:
+  /books:
     get:
-      summary: This is summary
+      summary: This gets all books
+      description: This is a detailed description
       tags:
-        - "Library"
-      description: This is a description
+        - "Books"
       operationId: getAllBooksInLibrary
       responses:
         "200":
@@ -27,6 +28,10 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Book'
+        "400":
+          description: BAD REQUEST
+        "401":
+          description: UNAUTH
 
 components:
 
