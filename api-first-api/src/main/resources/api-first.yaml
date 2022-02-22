@@ -13,6 +13,22 @@ tags:
 paths:
 
   /books:
+
+    post:
+      summary: Creates a book
+      operationId: createBook
+      requestBody:
+        description: HELLO
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Book'
+      responses:
+        "201":
+          description: CREATED
+
+
     get:
       summary: This gets all books
       description: This is a detailed description
@@ -40,6 +56,8 @@ components:
     Book:
       description: This is the book model
       type: object
+      required:
+        - name
       properties:
         name:
           description: The name of book

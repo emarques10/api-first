@@ -11,6 +11,13 @@ import java.util.List;
 
 @RestController
 public class BookController implements BooksApi {
+
+    @Override
+    public ResponseEntity<Void> createBook(Book body) {
+        System.out.println(body.getName());
+        return null;
+    }
+
     @Override
     public ResponseEntity<List<Book>> getAllBooksInLibrary() {
         List<Book> books = new ArrayList<>();
