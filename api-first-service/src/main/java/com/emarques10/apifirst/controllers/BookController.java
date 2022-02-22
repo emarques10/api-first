@@ -24,4 +24,12 @@ public class BookController implements BooksApi {
         books.add(new Book());
         return new ResponseEntity<>(books, HttpStatus.OK);
     }
+
+    @Override
+    public ResponseEntity<Book> getABookById(String bookId) {
+        Book book = new Book();
+        book.setName(bookId);
+        book.setBookAuthor(bookId);
+        return new ResponseEntity<>(book, HttpStatus.OK);
+    }
 }

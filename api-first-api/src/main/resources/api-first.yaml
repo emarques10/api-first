@@ -28,7 +28,6 @@ paths:
         "201":
           description: CREATED
 
-
     get:
       summary: This gets all books
       description: This is a detailed description
@@ -48,6 +47,27 @@ paths:
           description: BAD REQUEST
         "401":
           description: UNAUTH
+
+  /books/{bookId}:
+    parameters:
+      - name: bookId
+        description: book id
+        schema:
+          type: string
+        in: path
+        required: true
+    get:
+      summary: Get a book by Id
+      operationId: Get a book by Id
+      responses:
+        "200":
+          description: This means its ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Book'
+
+
 
 components:
 
